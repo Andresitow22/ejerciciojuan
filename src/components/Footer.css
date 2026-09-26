@@ -1,0 +1,67 @@
+/* Footer.css — Pie oscuro. Celular: apilado; escritorio: en fila. */
+
+.footer {
+  padding: var(--espacio-lg) 0 var(--espacio-md);
+  background: var(--color-cafe);
+  color: var(--color-crema);
+}
+
+.footer-inner {
+  display: grid;
+  gap: var(--espacio-md);
+  padding-bottom: var(--espacio-md);
+  border-bottom: 1px solid rgba(215, 196, 168, 0.3);
+}
+
+.footer-logo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-lema {
+  color: var(--color-arena);
+}
+
+.footer-redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-sm);
+}
+
+.footer-redes a,
+.footer-legal a {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: var(--color-crema);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-redes a:hover,
+.footer-legal a:hover {
+  color: var(--color-arena);
+  text-decoration: underline;
+}
+
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  padding-top: var(--espacio-md);
+  font-size: 0.875rem;
+  color: var(--color-arena);
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .footer-legal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

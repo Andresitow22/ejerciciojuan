@@ -1,0 +1,139 @@
+/* Header.css — Barra superior fija. Celular primero: menú desplegable. */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245, 235, 221, 0.95);
+  border-bottom: 1px solid var(--color-arena);
+  backdrop-filter: blur(6px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--alto-header);
+}
+
+.header-logo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-cafe);
+  text-decoration: none;
+}
+
+/* Botón hamburguesa (solo celular) */
+.header-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburguesa {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburguesa span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--color-cafe);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+/* Animación a "X" cuando el menú está abierto */
+.hamburguesa.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburguesa.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguesa.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menú desplegable en celular: oculto hasta que se abre */
+.header-nav {
+  display: none;
+  position: absolute;
+  top: var(--alto-header);
+  left: 0;
+  right: 0;
+  background: var(--color-crema);
+  border-bottom: 1px solid var(--color-arena);
+  box-shadow: var(--sombra);
+}
+
+.header-nav.is-open {
+  display: block;
+}
+
+.header-nav ul {
+  display: flex;
+  flex-direction: column;
+  padding: var(--espacio-sm);
+  gap: var(--espacio-xs);
+}
+
+.header-nav a:not(.btn) {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  color: var(--color-cafe);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-nav a:not(.btn):hover {
+  color: var(--color-terracota);
+}
+
+.header-cta {
+  width: 100%;
+  margin-top: var(--espacio-xs);
+}
+
+/* Tablet/escritorio: menú horizontal siempre visible, sin hamburguesa */
+@media (min-width: 768px) {
+  .header-toggle {
+    display: none;
+  }
+
+  .header-nav,
+  .header-nav.is-open {
+    display: block;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  .header-nav ul {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: var(--espacio-md);
+  }
+
+  .header-nav a:not(.btn) {
+    padding: 0.5rem 0;
+  }
+
+  .header-cta {
+    width: auto;
+    margin-top: 0;
+    min-height: 40px;
+    padding: 0.5rem 1.25rem;
+  }
+}

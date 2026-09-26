@@ -1,0 +1,77 @@
+/* Testimonios.css — Fondo oscuro para contrastar con las otras secciones. */
+
+.testimonios {
+  background: var(--color-cafe);
+  color: var(--color-crema);
+}
+
+/* En fondo oscuro, los textos del encabezado cambian de color */
+.testimonios .section-eyebrow {
+  color: var(--color-arena);
+}
+
+.testimonios-grid {
+  display: grid;
+  gap: var(--espacio-md);
+}
+
+.testimonio-card {
+  padding: var(--espacio-md);
+  background: rgba(255, 250, 243, 0.06);
+  border: 1px solid rgba(215, 196, 168, 0.3);
+  border-radius: var(--radio);
+}
+
+.testimonio-card figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.testimonio-estrellas {
+  margin-bottom: var(--espacio-sm);
+  letter-spacing: 0.1em;
+}
+
+.testimonio-texto {
+  flex: 1;
+  margin-bottom: var(--espacio-md);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+}
+
+.testimonio-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--color-terracota);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.testimonio-nombre {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.testimonio-detalle {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-arena);
+}
+
+@media (min-width: 768px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

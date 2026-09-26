@@ -1,0 +1,117 @@
+/* ==========================================================
+   index.css — Estilos globales: colores, tipografía y reset
+   Todo lo que se define aquí aplica a TODA la página.
+   ========================================================== */
+
+/* 1. Variables (tokens): se definen una vez y se reutilizan en todos los .css */
+:root {
+  /* Colores tierra y crema */
+  --color-cafe: #3e2723;        /* texto principal y fondos oscuros */
+  --color-cafe-medio: #6d4c41;  /* texto secundario */
+  --color-terracota: #a0522d;   /* botones y acentos */
+  --color-terracota-hover: #874322;
+  --color-arena: #d7c4a8;       /* bordes y detalles */
+  --color-crema: #f5ebdd;       /* fondo general */
+  --color-crema-claro: #fffaf3; /* fondo de tarjetas */
+  --color-blanco: #ffffff;
+  --color-exito: #2e6b3a;
+  --color-error: #a12622;
+
+  /* Tipografía (fuentes del sistema: cargan al instante) */
+  --fuente-titulos: Georgia, 'Times New Roman', serif;
+  --fuente-texto: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Espaciados y bordes */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 1.5rem;
+  --espacio-lg: 2.5rem;
+  --espacio-xl: 4rem;
+  --radio: 14px;
+  --sombra: 0 6px 20px rgba(62, 39, 35, 0.12);
+
+  --alto-header: 64px;
+}
+
+/* 2. Reset básico: quita márgenes raros de los navegadores */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Evita que el header fijo tape los títulos al saltar a una sección */
+  scroll-padding-top: var(--alto-header);
+}
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-cafe);
+  background-color: var(--color-crema);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-terracota);
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* 3. Foco visible: clave para quien navega con teclado */
+:focus-visible {
+  outline: 3px solid var(--color-terracota);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* 4. Texto solo para lectores de pantalla (invisible en pantalla) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 5. Si la persona pidió "menos movimiento" en su sistema, lo respetamos */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

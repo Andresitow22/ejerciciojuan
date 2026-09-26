@@ -1,0 +1,100 @@
+/* Menu.css — Filtros y tarjetas de productos. 1 → 2 → 3 columnas. */
+
+.menu-filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin-bottom: var(--espacio-lg);
+}
+
+.menu-filtro {
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: 2px solid var(--color-cafe);
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-filtro:hover {
+  background: var(--color-arena);
+}
+
+.menu-filtro.is-active {
+  background: var(--color-cafe);
+  color: var(--color-crema);
+}
+
+.menu-grid {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.menu-card {
+  display: flex;
+  gap: var(--espacio-sm);
+  align-items: flex-start;
+  padding: var(--espacio-md);
+  background: var(--color-crema-claro);
+  border: 1px solid var(--color-arena);
+  border-radius: var(--radio);
+  transition: box-shadow 0.2s;
+}
+
+.menu-card:hover {
+  box-shadow: var(--sombra);
+}
+
+.menu-emoji {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--color-crema);
+  border-radius: 12px;
+  font-size: 2rem;
+}
+
+.menu-info {
+  flex: 1;
+}
+
+.menu-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--espacio-xs);
+  margin-bottom: 0.25rem;
+}
+
+.menu-nombre {
+  font-size: 1.1rem;
+}
+
+.menu-precio {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--color-terracota);
+}
+
+.menu-descripcion {
+  font-size: 0.95rem;
+  color: var(--color-cafe-medio);
+}
+
+@media (min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

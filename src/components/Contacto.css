@@ -1,0 +1,152 @@
+/* Contacto.css — Info + formulario. Celular: apilados; escritorio: lado a lado. */
+
+.contacto {
+  background: var(--color-crema-claro);
+}
+
+.contacto-inner {
+  display: grid;
+  gap: var(--espacio-lg);
+}
+
+.contacto-info .section-subtitle {
+  margin-bottom: var(--espacio-md);
+}
+
+.contacto-datos {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.contacto-datos li {
+  display: flex;
+  gap: var(--espacio-sm);
+  align-items: flex-start;
+}
+
+.contacto-datos li > span:first-child {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.contacto-datos strong {
+  display: block;
+}
+
+.contacto-datos a {
+  font-weight: 600;
+}
+
+/* Tarjeta del formulario */
+.contacto-form-wrap {
+  padding: var(--espacio-md);
+  background: var(--color-crema);
+  border: 1px solid var(--color-arena);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.contacto-form {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo-opcional {
+  font-weight: 400;
+  color: var(--color-cafe-medio);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.65rem 0.85rem;
+  background: var(--color-blanco);
+  border: 2px solid var(--color-arena);
+  border-radius: 10px;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible,
+.campo textarea:focus-visible {
+  border-color: var(--color-terracota);
+  outline-offset: 1px;
+}
+
+.campo [aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.campo-error {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-error);
+}
+
+.campo-fila {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.contacto-enviar {
+  width: 100%;
+  margin-top: var(--espacio-xs);
+}
+
+/* Mensaje de confirmación */
+.reserva-ok {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.reserva-ok-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-exito);
+}
+
+.reserva-ok-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+/* Celular ancho: fecha, hora y personas en una fila */
+@media (min-width: 480px) {
+  .campo-fila {
+    grid-template-columns: 2fr 1.3fr 1fr;
+  }
+
+  .reserva-ok-acciones {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 900px) {
+  .contacto-inner {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+  }
+
+  .contacto-form-wrap {
+    padding: var(--espacio-lg);
+  }
+}

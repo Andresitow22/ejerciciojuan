@@ -1,0 +1,51 @@
+/* Beneficios.css — Tarjetas: 1 columna en celular, 3 en escritorio. */
+
+.beneficios {
+  background: var(--color-crema-claro);
+}
+
+.beneficios-grid {
+  display: grid;
+  gap: var(--espacio-md);
+}
+
+.beneficio-card {
+  padding: var(--espacio-lg) var(--espacio-md);
+  background: var(--color-crema);
+  border: 1px solid var(--color-arena);
+  border-radius: var(--radio);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.beneficio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.beneficio-emoji {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: var(--espacio-sm);
+  background: var(--color-arena);
+  border-radius: 50%;
+  font-size: 2.25rem;
+}
+
+.beneficio-titulo {
+  font-size: 1.35rem;
+  margin-bottom: var(--espacio-xs);
+}
+
+.beneficio-texto {
+  color: var(--color-cafe-medio);
+}
+
+@media (min-width: 768px) {
+  .beneficios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
